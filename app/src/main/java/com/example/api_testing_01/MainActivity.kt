@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -49,28 +50,45 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .padding(innerPadding)
                             .fillMaxSize()
+                            .background(Color.Black)
                     ) {
                         items(Quotes) {
                             Card(
+                                //Color = contentColorFor(backgroundColor = Color.LightGray),
                                 modifier = Modifier
                                     .padding(horizontal = 12.dp, vertical = 8.dp)
-                                    .fillMaxWidth()
+                                    .fillMaxWidth(),
                             ) {
                                 Text(it.title.toString(),
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Blue)
-                                Text(it.id.toString())
+                                    color = Color.Blue,
+                                    modifier = Modifier
+                                        .padding(start = 10.dp, end = 10.dp))
+                                Text(it.id.toString(),
+                                    modifier = Modifier
+                                    .padding(start = 10.dp, end = 10.dp))
                                 Text(it.category.toString(),
                                     fontWeight = FontWeight.SemiBold,
-                                    color = Color.Magenta
+                                    color = Color.Magenta,
+                                    modifier = Modifier
+                                        .padding(start = 10.dp, end = 10.dp)
                                 )
-                                Text(it.description.toString())
-                                Text(it.rating.toString())
+                                Text(it.description.toString(),
+                                    modifier = Modifier
+                                        .padding(start = 10.dp, end = 10.dp))
+                                Text(it.rating.toString(),
+                                    fontSize = 17.sp,
+                                    color = Color.Green,
+                                    modifier = Modifier
+                                        .padding(start = 10.dp, end = 10.dp)
+                                    )
                                 Text("$"+it.price.toString(),
-                                    fontSize = 18.sp,
+                                    fontSize = 25.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.Red)
+                                    color = Color.Red,
+                                    modifier = Modifier
+                                        .padding(start = 10.dp, end = 10.dp))
                             }
                         }
                     }
