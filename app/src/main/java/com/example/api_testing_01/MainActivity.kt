@@ -88,10 +88,10 @@ class MainActivity : ComponentActivity() {
                                     color = Color.Blue,
                                     modifier = Modifier
                                         .padding(start = 10.dp, end = 10.dp))
-                                Text(it.id.toString(),
-                                    modifier = Modifier
-                                    .padding(start = 10.dp, end = 10.dp))
-                                Text(it.category.toString(),
+//                                Text("id="+it.id.toString(),
+//                                    modifier = Modifier
+//                                    .padding(start = 10.dp, end = 10.dp))
+                                Text("Category: "+it.category.toString(),
                                     fontWeight = FontWeight.SemiBold,
                                     color = Color.Magenta,
                                     modifier = Modifier
