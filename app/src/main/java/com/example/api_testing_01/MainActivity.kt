@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.RoundedCorner
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -33,6 +36,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.CornerRadius
@@ -123,21 +127,24 @@ class MainActivity : ComponentActivity() {
 
                                 Spacer(modifier = Modifier.height(15.dp))
 
-                                Row(
-                                    modifier = Modifier
+                                Row(modifier = Modifier
                                         .fillMaxWidth()
+                                        //.clickable(onClick = )
                                         //.background(Color.LightGray)
                                 ) {
 
                                     Spacer(modifier = Modifier.padding(horizontal = 30.dp))
 
                                     Box(
+                                        contentAlignment = Alignment.Center,
                                         modifier = Modifier
+                                            .clip(RoundedCornerShape(10.dp))
+                                            .border(2.dp,Color.Black, shape = RoundedCornerShape(10.dp))
                                             .background(Color.Yellow)
                                             //.padding(start = 20.dp)
                                             .padding(10.dp)
-                                            .clip(RoundedCornerShape(5.dp))
-                                            //.fillMaxWidth()
+                                            .size(width = 75.dp, height = 25.dp)
+                                        //.fillMaxWidth()
                                             //.padding(bottom = 10.dp)
                                     ) {
                                         Text(
@@ -148,14 +155,17 @@ class MainActivity : ComponentActivity() {
 
                                     }
 
-                                    Spacer(modifier = Modifier.padding(horizontal = 30.dp))
+                                    Spacer(modifier = Modifier.padding(horizontal = 20.dp))
 
                                     Box(
+                                        contentAlignment = Alignment.Center,
                                         modifier = Modifier
+                                            .clip(RoundedCornerShape(10.dp))
+                                            .border(2.dp,Color.Black, shape = RoundedCornerShape(10.dp))
                                             .background(Color.Yellow)
                                             //.padding(start = 20.dp)
                                             .padding(10.dp)
-                                            .clip(RoundedCornerShape(5.dp))
+                                            .size(width = 100.dp, height = 25.dp)
                                         //.fillMaxWidth()
                                         //.padding(bottom = 10.dp)
                                     ) {
