@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.LaunchedEffect
@@ -69,6 +70,7 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier
                                     .padding(horizontal = 12.dp, vertical = 8.dp)
                                     .fillMaxWidth(),
+                                colors = CardDefaults.cardColors(Color.White)
                             ) {
                                 AsyncImage(
                                     model = it.image,
@@ -95,12 +97,19 @@ class MainActivity : ComponentActivity() {
                                     modifier = Modifier
                                         .padding(start = 10.dp, end = 10.dp)
                                 )
+
+                                Box(modifier = Modifier
+                                    .padding(10.dp)
+                                    .border(width = 1.dp,color = Color.Black, shape = RoundedCornerShape(10.dp))
+                                    .fillMaxWidth()
+                                ) {
                                 Text(it.description.toString(),
                                     modifier = Modifier
                                         .padding(start = 10.dp, end = 10.dp))
+                                }
                                 Text(it.rating.toString(),
                                     fontSize = 17.sp,
-                                    color = Color.Green,
+                                    color = Color.Cyan,
                                     modifier = Modifier
                                         .padding(start = 10.dp, end = 10.dp)
                                     )
